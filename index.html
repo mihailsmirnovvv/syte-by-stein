@@ -645,10 +645,14 @@
             background: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
             transition: all 0.3s;
             border: 1px solid rgba(0, 255, 136, 0.1);
+            height: 100%; /* Занимает всю доступную высоту */
+            display: flex; /* Используем flexbox */
+            flex-direction: column; /* Элементы в колонку */
         }
+
         
         .portfolio-item:hover {
             transform: translateY(-10px);
@@ -659,6 +663,7 @@
         .portfolio-image {
             height: 250px;
             overflow: hidden;
+            flex-shrink: 0;
         }
         
         .portfolio-image img {
@@ -674,6 +679,9 @@
         
         .portfolio-info {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .portfolio-info h3 {
@@ -685,8 +693,12 @@
         .portfolio-info p {
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
+            flex-grow: 1;
         }
-        
+        .swiper-slide {
+            height: auto; /* Автоматическая высота */
+            display: flex; /* Для выравнивания карточек */
+        }
         .swiper-button-next, .swiper-button-prev {
             color: var(--accent) !important;
             background: rgba(0, 0, 0, 0.5);
